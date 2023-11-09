@@ -10,7 +10,7 @@ class Mental extends Component {
     this.state = {
       num1: '',
       num2: '',
-      operation: '-',
+      operation: '+',
       userAnswer: null,
       correct: null,
       options: [],
@@ -31,6 +31,7 @@ class Mental extends Component {
     const { operation } = this.state;
     const num1 = Math.floor(Math.random() * 50) + 1;
     const num2 = Math.floor(Math.random() * 50) + 1;
+    const options = Array(4).fill(null).map(() => { return Math.floor(Math.random() * 250) + 1});
     let randomIndex = Math.floor(Math.random() * 4);
 
   
