@@ -23,15 +23,15 @@ class Mental extends Component {
 
 
 
-
-
-
   // function to generate operands, and random answers
   generateNumbers = () => {
     const { operation } = this.state;
     const num1 = Math.floor(Math.random() * 50) + 1;
     const num2 = Math.floor(Math.random() * 50) + 1;
     let randomIndex = Math.floor(Math.random() * 4);
+
+    let { options } = this.state;
+    
 
   
     switch (operation) {
@@ -56,8 +56,32 @@ class Mental extends Component {
         return;
     }
 
-    const options = Array(4).fill(null).map(() => { return this.state.userAnswer - (Math.floor(Math.random() * 8) + 1) });
+      options = Array(4).fill(null).map(() => {
+      return this.state.userAnswer - (Math.floor(Math.random() * 8) + 1);
+    });
+
     options[randomIndex] = this.state.userAnswer;
+
+    // Iterate through the options array and reassign duplicate values
+    for (let i = 0; i < options.length; i++){
+      for (let j = 0; j < options.length; j++){
+        if (i !== j && options[i] === options[j]){
+          // Reassign the value at index i
+          options[i] = this.state.userAnswer - (Math.floor(Math.random() * 8) + 1);
+          // Restart the inner loop to check the new value against previous values
+          j = 0;
+        }
+      }
+    }
+
+    // Randomly shuffle the options to make their order unpredictable
+    for (let i = options.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      // Swap elements at indices i and j
+      const temp = options[i];
+      options[i] = options[j];
+      options[j] = temp;
+    }
     this.setState({ num1, num2, options });
   };
 
@@ -71,6 +95,7 @@ class Mental extends Component {
   // handleAnswerChange
   handleAnswerChange = (e) => {
     this.setState({ userAnswer: e.target.value });
+    this.generateNumbers();
   };
 
 
