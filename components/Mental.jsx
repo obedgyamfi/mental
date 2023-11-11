@@ -102,12 +102,18 @@ class Mental extends Component {
   // checkAnswer: checks if the selected answer is equal to the correctAnswer
   /* it alerts the user "Correct" if it is equal and "Wrong" if it isn't */
   checkAnswer = (selectedNumber) => {
-    if (selectedNumber === this.state.userAnswer){
-      alert('Correct!');
-    }
-    else {
-      alert('Wrong!');
-    }
+    const { userAnswer } = this.state;
+    
+    // Check if the selected answer is correct
+    const isCorrect = selectedNumber === userAnswer;
+
+    // set the isCorrect state for temporary styling
+    this.setState({ isCorrect });
+
+    // Optional: You can use setTimeout to reset the isCorrect state after a delay
+    setTimeout(() => {
+    this.setState({ isCorrect: null });}, 1000); // adjust the delay as needed(in milliseconds)
+
     this.generateNumbers();
   };
 
@@ -115,7 +121,7 @@ class Mental extends Component {
   // render script to display the arithmetic operation and the possible answers
   // as well as all ui components
   render() {
-    const { num1, num2, operation, options } = this.state;
+    const { num1, num2, operation, options, isCorrect } = this.state;
 
     return (
         <>
@@ -125,10 +131,12 @@ class Mental extends Component {
             <p className="operand2">{num2}</p>
         </section>
 
-        <section className="flex flex-center answerButtons m-5">
+        <section className={`flex flex-center m-5  ${isCorrect === true ? 'sectionButton correctAnswerButton' : isCorrect === false ?
+        'sectionButton wrongAnswerButton' : ''}`
+        }>
           {options.map((number, index) => (
             <button
-              className='button'
+              className={`button`}
               key={index}
               onClick={() => this.checkAnswer(number)}>
                 {number}

@@ -14,7 +14,7 @@ html, body {
 }
 
 .main-background {
-  background-color: rgb(82, 220, 174);
+  background-color: rgb(220, 151, 82);
 }
 
 /* Desktop, Laptops and Tablet Screens */
@@ -112,6 +112,45 @@ html, body {
   }
 
 
+}
+.sectionButton {
+  box-sizing: border-box;
+  padding: 20px;
+  box-shadow: 0 5px transparent;
+  border-radius: 5%;
+}
+
+@keyframes greenBorderAnimation {
+  0% {
+    box-shadow: 0 5px green;
+  }
+  50% {
+    box-shadow: 0 5px green;
+  }
+  100% {
+    box-shadow: 0 5px transparent;
+  }
+}
+
+@keyframes redBorderAnimation {
+  0% {
+    box-shadow: 0 5px red;
+  }
+  50% {
+    box-shadow: 0 5px red;
+  }
+  100% {
+    box-shadow: 0 5px transparent;
+  }
+}
+
+.correctAnswerButton {
+  animation: greenBorderAnimation 1s forwards;
+}
+
+
+.wrongAnswerButton{
+  animation: redBorderAnimation 1s forwards;
 }
 
 .button:hover {
