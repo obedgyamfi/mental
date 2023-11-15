@@ -37,7 +37,46 @@ html, body {
     border: 5px solid;
     border-radius: 70%;
     padding: 10px;
-    margin-right: 10px;
+    margin: 10px;
+  }
+
+  .sectionButton {
+    box-sizing: border-box;
+    padding: 20px;
+    box-shadow: 0 5px transparent;
+    border-radius: 5%;
+  }
+  
+  .sectionParentStyle {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .verticalButtonStyle{
+    display: block;
+    width: 1cm;
+    box-sizing: border-box;
+    padding: 8px;
+    margin: 20px;
+  }
+
+  .horizontalElementStyle {
+    display:flex;
+    flex-direction: row;
+    justify-items: space-between;
+    width: 100%;
+  }
+
+  .horizontalButtonStyle{
+    flex-grow: 1;
+    width: 1cm;
+    box-sizing: border-box;
+    padding: 8px;
+    margin: 20px;
   }
 
 }
@@ -64,6 +103,15 @@ html, body {
     margin-right: 10px;
   }
 
+  .sectionButton {
+    box-sizing: border-box;
+    padding: 20px;
+    box-shadow: 0 5px transparent;
+    border-radius: 5%;
+  }
+  
+  
+
 }
 
 @media screen and (max-width: 768px) and (orientation: portrait) {
@@ -86,6 +134,13 @@ html, body {
     border-radius: 70%;
     padding: 10px;
     margin-right: 10px;
+  }
+
+  .sectionButton {
+    box-sizing: border-box;
+    padding: 20px;
+    box-shadow: 0 5px transparent;
+    border-radius: 5%;
   }
 }
 
@@ -111,15 +166,18 @@ html, body {
     margin-right: 10px;
   }
 
-
+  .sectionButton {
+    box-sizing: border-box;
+    padding: 20px;
+    box-shadow: 0 5px transparent;
+    border-radius: 5%;
+  }
+  
 }
-.sectionButton {
-  box-sizing: border-box;
-  padding: 20px;
-  box-shadow: 0 5px transparent;
-  border-radius: 5%;
-}
 
+
+
+/* Animations */
 @keyframes greenBorderAnimation {
   0% {
     box-shadow: 0 5px green;
@@ -158,8 +216,9 @@ html, body {
     color: white;
     border-color: black;
 }
-/* Tailwind Styles */
 
+
+/* Tailwind Styles */
 
 .app {
   @apply relative z-10 flex justify-center items-center flex-col h-auto mx-auto sm:px-16 px-6;
