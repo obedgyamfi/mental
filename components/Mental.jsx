@@ -148,24 +148,44 @@ class Mental extends Component {
 
           {/* {Button 1} */}
           <div className="verticalButtonStyle">
-            <button className="button">{options[0]}</button>
+            <button
+              className="button"
+              onClick={() => this.checkAnswer(options[0])}
+            >
+              {options[0]}
+            </button>
           </div>
 
           {/* Button 2 and 3 */}
           <div className="horizontalElementStyle">
             {/* Button 2 */}
             <div className="horizontalButtonStyle">
-              <button className="button">{options[1]}</button>
+              <button
+                className="button"
+                onClick={() => this.checkAnswer(options[1])}
+              >
+                {options[1]}
+              </button>
             </div>
             {/* Button 3 */}
             <div className="horizontalButtonStyle">
-              <button className="button">{options[2]}</button>
+              <button
+                className="button"
+                onClick={() => this.checkAnswer(options[2])}
+              >
+                {options[2]}
+              </button>
             </div>
           </div>
 
           {/* Button 4 */}
           <div className="verticalButtonStyle">
-            <button className="button">{options[3]}</button>
+            <button
+              className="button"
+              onClick={() => this.checkAnswer(options[3])}
+            >
+              {options[3]}
+            </button>
           </div>
         </section>
       </>
