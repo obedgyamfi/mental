@@ -137,17 +137,18 @@ class Mental extends Component {
               : ""
           }`}
         >
-          {/* {options.map((number, index) => (
+{/*           
+          { options.map((number, index) => (
             <button
               className={`button`}
               key={index}
               onClick={() => this.checkAnswer(number)}>
                 {number}
             </button>
-          ))} */}
+          )) } */}
 
           {/* {Button 1} */}
-          <div className="verticalButtonStyle">
+          <div className="horizontalButtonStyle">
             <button
               className="button"
               onClick={() => this.checkAnswer(options[0])}
@@ -157,9 +158,9 @@ class Mental extends Component {
           </div>
 
           {/* Button 2 and 3 */}
-          <div className="horizontalElementStyle">
+          <div className="verticalElementStyle">
             {/* Button 2 */}
-            <div className="horizontalButtonStyle">
+            <div className="verticalButtonStyle">
               <button
                 className="button"
                 onClick={() => this.checkAnswer(options[1])}
@@ -168,7 +169,7 @@ class Mental extends Component {
               </button>
             </div>
             {/* Button 3 */}
-            <div className="horizontalButtonStyle">
+            <div className="verticalButtonStyle">
               <button
                 className="button"
                 onClick={() => this.checkAnswer(options[2])}
@@ -179,7 +180,7 @@ class Mental extends Component {
           </div>
 
           {/* Button 4 */}
-          <div className="verticalButtonStyle">
+          <div className="horizontalButtonStyle">
             <button
               className="button"
               onClick={() => this.checkAnswer(options[3])}

@@ -48,35 +48,43 @@ html, body {
   }
   
   .sectionParentStyle {
-    width: auto;
-    height: auto;
+    width: 300px;
+    height: 200px;
     display: flex;
-    flex-direction:column;
+    /* flex-direction:column; */
     align-items: center;
     justify-content: center;
   }
 
-  .verticalButtonStyle{
+  .horizontalButtonStyle{
     display: block;
     width: 1cm;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     padding: 8px;
-    margin: 20px;
+    margin: 100px;
   }
 
-  .horizontalElementStyle {
+  .verticalElementStyle {
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-items: space-between;
-    width: 100%;
+    width: 100px;
+    margin:60px
   }
 
-  .horizontalButtonStyle{
+  .verticalButtonStyle{
     flex-grow: 1;
     width: 1cm;
     box-sizing: border-box;
     padding: 8px;
     margin: 20px;
+  }
+
+    .sectionButton {
+    box-sizing: border-box;
+    padding: 10px;
+    box-shadow: 0 5px transparent;
+    border-radius: 5%;
   }
 
 }
@@ -105,7 +113,7 @@ html, body {
 
   .sectionButton {
     box-sizing: border-box;
-    padding: 20px;
+    padding: 10px;
     box-shadow: 0 5px transparent;
     border-radius: 5%;
   }
@@ -138,7 +146,7 @@ html, body {
 
   .sectionButton {
     box-sizing: border-box;
-    padding: 20px;
+    padding: 10px;
     box-shadow: 0 5px transparent;
     border-radius: 5%;
   }
@@ -168,7 +176,7 @@ html, body {
 
   .sectionButton {
     box-sizing: border-box;
-    padding: 20px;
+    padding: 10px;
     box-shadow: 0 5px transparent;
     border-radius: 5%;
   }
