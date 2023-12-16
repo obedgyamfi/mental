@@ -226,6 +226,98 @@ html, body {
 }
 
 
+/* icons styles */
+
+.ioSettings-icon {
+  padding: 0 10px;
+  margin: 0 20px;
+
+}
+
+.ioSetting-icon:hover {
+  color: white;
+  background-color: black;
+  border-radius: 8%;
+}
+
+
+.ioColorPalette-icon {
+  padding: 0 10px;
+  margin: 0 20px;
+  /* width: 40px; */
+}
+
+.ioColorPalette-icon:hover {
+  color: white;
+  background-color: black;
+  border-radius: 10%;
+}
+
+
+
+/* color palette styles */
+.red {
+  background-color: red;
+}
+
+/* operation styles */
+.operationStyle{
+  padding: 0 10px;
+  margin: 0 8px;
+  border: 0.5px solid black;
+  border-radius: 10%;
+  font-size: 25px;
+}
+
+.operationStyle:hover{
+  background-color: black;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Tailwind Styles */
 
 .app {

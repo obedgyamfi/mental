@@ -1,15 +1,16 @@
 "use client";
 import React, { Component } from "react";
+import Nav from '@components/Nav';
 
 class Mental extends Component {
   constructor() {
     super();
-
+ 
     // initialize operands, operations, userAnswer and options
     this.state = {
       num1: "",
       num2: "",
-      operation: "+",
+      operation: "-",
       userAnswer: null,
       correct: null,
       options: [],
@@ -19,6 +20,15 @@ class Mental extends Component {
   componentDidMount() {
     this.generateNumbers(this.state.userAnswer);
   }
+
+  // handleOperationChange, checks anytime the operation changes, to generate
+  // new numbers for the operation
+  handleOperationChange = (selectedOperation) => {
+    this.setState({ operation: selectedOperation, userAnswer: null }, () => {
+      this.generateNumbers();
+    });
+  };
+
 
   // function to generate operands, and random answers
   generateNumbers = () => {
@@ -83,19 +93,7 @@ class Mental extends Component {
     this.setState({ num1, num2, options });
   };
 
-  // handleOperationChange, checks anytime the operation changes, to generate
-  // new numbers for the operation
-  handleOperationChange = (e) => {
-    this.setState({ operation: e.target.value });
-    this.generateNumbers();
-  };
-
-  // handleAnswerChange
-  handleAnswerChange = (e) => {
-    this.setState({ userAnswer: e.target.value });
-    this.generateNumbers();
-  };
-
+  
   // checkAnswer: checks if the selected answer is equal to the correctAnswer
   /* it alerts the user "Correct" if it is equal and "Wrong" if it isn't */
   checkAnswer = (selectedNumber) => {
@@ -122,6 +120,7 @@ class Mental extends Component {
 
     return (
       <>
+        <Nav handleOperationChange={this.handleOperationChange} />
         <section className=" font flex w-full mt-40 mb-20 flex-center">
           <p className="operand1">{num1}</p>
           <p className="operation">{operation}</p>
